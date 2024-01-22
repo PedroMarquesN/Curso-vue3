@@ -18,9 +18,17 @@ const app = {
                 image: './assets/images/IMG-20231222-WA0004.jpg',
                 stars: 0,
             }
-        ]
+        ],
+        cart:[],
         }
-    }
+    },
+
+    
+    methods: {
+        addCart (product) {
+            this.cart.push(product)
+        }
+    },
 }
 
 Vue.createApp(app).mount('#app')
