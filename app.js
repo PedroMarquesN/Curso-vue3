@@ -8,18 +8,23 @@ const app = {
                 id: 1 ,
                 title:'Calça 1' ,
                 description: 'Calça 1',
-                image: './assets/images/IMG-20231222-WA0003.jpg',
+                image: './assets/images/filme 2.webp',
                 stars: 3,
             },
             {
                 id: 2,
                 title:'Calça 2' ,
                 description: 'Calça 2',
-                image: './assets/images/IMG-20231222-WA0004.jpg',
+                image: './assets/images/filme 1.png',
                 stars: 0,
             }
         ],
         cart:[],
+        }
+    },
+    computed: {
+        fullName(){
+            return this.name + ' ' + this.lastname
         }
     },
 

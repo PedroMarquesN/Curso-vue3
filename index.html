@@ -4,28 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Intro Vue3</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        #app {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 100px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        strong {
+            color: #28a745;
+            font-size: 1.2em;
+        }
+
+        a {
+            display: inline-block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <h1>Curso de vue 3</h1>
-        <p>{{name}} {{lastname}}</p>
+        <h1>Curso de Vue 3</h1>
+        <p>{{fullName}}</p>
 
         <h2>Carrinho: ({{cart.length}})</h2>
         <ul>
             <li v-for="product in products" :key="product.id">
                 <h2>{{product.title}}</h2>
-                <img :src="product.image" :alt="product.title" style="max-width: 100px;">
+                <img :src="product.image" :alt="product.title">
                 <strong v-if="product.stars > 0 ">{{product.stars}}</strong>
-                
-                
-                <a href="#" v-if="inCart(product)" @click.prevent="removeCart(product)" >Remove Cart</a>
 
-                <a  v-else href="#"  @click.prevent="addCart(product)" >Add Cart</a>
-
-
+                <a v-if="inCart(product)" @click.prevent="removeCart(product)">Remove do Carrinho</a>
+                <a v-else @click.prevent="addCart(product)">Adicionar ao Carrinho</a>
             </li>
         </ul>
-
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./app.js"></script>
