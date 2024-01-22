@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Intro Vue3</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Curso de vue 3</h1>
+        <p>{{name}} {{lastname}}</p>
+        
+        <img v-bind:src="products.image" v-bind:alt="products.title" style="max-width: 100px;">
+        <strong v-show="products.stars > 0 ">{{products.stars}}</strong>
+        <img :src="products2.image" :alt="products2.title" style="max-width: 100px;">
+        <strong v-if="products2.stars > 0">{{products2.stars}}</strong>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
